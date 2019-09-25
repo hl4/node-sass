@@ -24,8 +24,8 @@ steps:
       - node -p process.platform
       - node -p process.config.variables
       - uname -m
-      # - npm install --unsafe-perm
-      # - npm test
+      - npm install --unsafe-perm
+      - npm test
       # - cp -R /drone/src/vendor /tmp
       # - ls -lsa /tmp/vendor
 volumes:
@@ -64,37 +64,5 @@ steps:
 volumes:
   - name: vendor
     temp: {}
----
-kind: pipeline
-name: node8-arm32v6
 
-platform:
-  os: linux
-  arch: arm
 
-steps:
-  - name: build
-    image: arm32v6/node:8-alpine
-    volumes:
-      - name: vendor
-        path: /tmp/vendor
-    commands:
-      - export SKIP_SASS_BINARY_DOWNLOAD_FOR_CI="true"
-      - apk add --no-cache python=2.7.15-r3 git-perl bash make gcc g++
-      - rm /bin/sh && ln -s /bin/bash /bin/sh
-      - node -v
-      - npm -v
-      - gcc --version
-      - g++ --version
-      - node -p process.versions
-      - node -p process.arch
-      - node -p process.platform
-      - node -p process.config.variables
-      - uname -m
-      # - npm install --unsafe-perm
-      # - npm test
-      # - cp -R /drone/src/vendor /tmp
-      # - ls -lsa /tmp/vendor
-volumes:
-  - name: vendor
-    temp: {}
