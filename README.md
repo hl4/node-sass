@@ -21,7 +21,7 @@ Node 8  | 4.5.3+                   | 57
     </td>
   </tr>
 </table>
-
+[![Build Status](https://cloud.drone.io/api/badges/hl4/node-sass/status.svg)](https://cloud.drone.io/hl4/node-sass)
 [![Build Status](https://travis-ci.org/sass/node-sass.svg?branch=master&style=flat)](https://travis-ci.org/sass/node-sass)
 [![Build status](https://ci.appveyor.com/api/projects/status/22mjbk59kvd55m9y/branch/master?svg=true)](https://ci.appveyor.com/project/sass/node-sass/branch/master)
 [![npm version](https://badge.fury.io/js/node-sass.svg)](http://badge.fury.io/js/node-sass)
