@@ -26,7 +26,7 @@ steps:
       - uname -m
       - npm install --unsafe-perm
       - npm test
-      - node script/release.js
+      - node scripts/release.js
       # - cp -R /drone/src/vendor /tmp
       # - ls -lsa /tmp/vendor
 volumes:
