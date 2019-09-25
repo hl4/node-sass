@@ -8,7 +8,7 @@ platform:
 
 steps:
   - name: build
-    image: arm64v8/node:10
+    image: arm64v8/node:10.15.3
     volumes:
       - name: vendor
         path: /tmp/vendor
@@ -26,7 +26,7 @@ steps:
       - uname -m
       - npm install --unsafe-perm
       - npm test
-      - npm prepublish
+      - node script/release.js
       # - cp -R /drone/src/vendor /tmp
       # - ls -lsa /tmp/vendor
 volumes:
